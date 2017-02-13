@@ -54,10 +54,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.nav_child) {
+        if (id == R.id.duvidas) {
+            Intent intent = new Intent(this,ActivitysobreIMC.class);
+            startActivity(intent);
+
             return true;
         }
-        if (id == R.id.to_tutorial) {
+        if (id == R.id.licenca) {
             return true;
         }
         return super.onOptionsItemSelected(item);

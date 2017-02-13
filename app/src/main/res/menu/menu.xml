@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/nav_child"
+        android:id="@+id/duvidas"
         android:title="@string/menu_duvidas" />
     <item
-        android:id="@+id/to_tutorial"
+        android:id="@+id/licenca"
         android:title="@string/menu_copyright"
         />
 </menu>
