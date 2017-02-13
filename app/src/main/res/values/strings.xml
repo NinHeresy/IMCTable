@@ -2,8 +2,8 @@
     <string name="app_name">IMCTable</string>
 
     <string-array name="title_tabs">
-        <item>Adulto</item>
         <item>Criança</item>
+        <item>Adulto</item>
         <item>Idoso</item>
     </string-array>
 
@@ -21,4 +21,15 @@
     <!--strings msg_alert-->
     <string name="msg_alert_alt">Preencha o campo Altura !</string>
     <string name="msg_alert_peso">Preencha o campo Peso !</string>
+    <string name="peso_kg">Peso (Kg)</string>
+    <string name="altura_m">Altura (M²)</string>
+    <string name="calcular">Calcular</string>
+    <string name="limpar">Limpar</string>
+    <string name="sexo">Sexo:</string>
+    <string name="idade">Idade:</string>
+    <string name="digite_sua_idade">Digite sua Idade</string>
+    <string name="homem">Homem</string>
+    <string name="mulher">Mulher</string>
+    <string name="menu_duvidas">Duvidas</string>
+    <string name="menu_copyright">Copyright</string>
 </resources>

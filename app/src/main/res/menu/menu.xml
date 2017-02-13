@@ -3,14 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_child"
-        android:title="IMC para Crianças" />
-
-    <item
-        android:id="@+id/old_man"
-        android:title="IMC Idoso"
-        />
+        android:title="@string/menu_duvidas" />
     <item
         android:id="@+id/to_tutorial"
-        android:title="Sobre o IMC"
+        android:title="@string/menu_copyright"
         />
 </menu>

@@ -24,7 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:elevation="0dp"
-            android:text="Calcular"
+            android:text="@string/calcular"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -36,26 +36,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:elevation="0dp"
-            android:text="Limpar"
+            android:text="@string/limpar"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edt2"
-            style="@style/EditTextStyle"
-            android:layout_width="172dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="26dp"
-            android:hint="Peso (Kg)"
-            android:inputType="numberDecimal"
-            android:maxLength="3"
-            android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:layout_below="@+id/edt1"
-            android:layout_alignLeft="@+id/editIdade"
-            android:layout_alignStart="@+id/editIdade"
-            android:layout_alignRight="@+id/editIdade"
-            android:layout_alignEnd="@+id/editIdade" />
 
         <EditText
             android:id="@+id/edt1"
@@ -63,7 +46,7 @@
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="42dp"
-            android:hint="Altura (M²)"
+            android:hint="@string/altura_m"
             android:inputType="numberDecimal"
             android:maxLength="4"
             android:textSize="18sp"
@@ -116,7 +99,7 @@
             android:layout_below="@+id/edt2"
             android:layout_marginTop="49dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Sexo:"
+            android:text="@string/sexo"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="22sp" />
 
@@ -128,23 +111,9 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/radioGroup"
             android:layout_marginTop="49dp"
-            android:text="Idade:"
+            android:text="@string/idade"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="22sp" />
-
-        <EditText
-            android:id="@+id/editIdade"
-            style="@style/EditTextStyle"
-            android:layout_width="172dp"
-            android:layout_height="49dp"
-            android:hint="Digite sua Idade"
-            android:inputType="numberDecimal"
-            android:maxLength="2"
-            android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:layout_alignBaseline="@+id/texidade"
-            android:layout_alignBottom="@+id/texidade"
-            android:layout_toRightOf="@+id/texidade" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/radioGroup"
@@ -163,7 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Homem" />
+                android:text="@string/homem" />
 
             <RadioButton
                 android:id="@+id/radiowoman"
@@ -171,8 +140,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="11dp"
                 android:layout_marginRight="11dp"
-                android:text="Mulher " />
+                android:text="@string/mulher" />
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/edt2"
+            style="@style/EditTextStyle"
+            android:layout_width="172dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="26dp"
+            android:hint="@string/peso_kg"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/edt1"
+            android:layout_alignRight="@+id/editIdade"
+            android:layout_alignEnd="@+id/editIdade" />
+
+        <EditText
+            android:id="@+id/editIdade"
+            style="@style/EditTextStyle"
+            android:layout_width="172dp"
+            android:layout_height="49dp"
+            android:hint="@string/digite_sua_idade"
+            android:inputType="numberDecimal"
+            android:maxLength="2"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:layout_alignBaseline="@+id/texidade"
+            android:layout_alignBottom="@+id/texidade"
+            android:layout_toRightOf="@+id/texidade"
+            android:layout_toEndOf="@+id/texidade" />
     </RelativeLayout>
 </RelativeLayout>
 

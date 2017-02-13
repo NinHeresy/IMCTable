@@ -13,10 +13,27 @@ import com.example.ramonlopes.imctable.R;
  * Created by Ramon Lopes on 10/02/2017.
  */
 
-public class TableThree extends Fragment {
+public class TableThree extends Fragment implements View.OnClickListener {
+    public View mView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_fragment_c, container,false);
+
+        mView = inflater.inflate(R.layout.layout_fragment_c, container,false);
+
+
+
+
+
+
+
+        return mView;
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

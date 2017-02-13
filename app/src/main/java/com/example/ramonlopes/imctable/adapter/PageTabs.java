@@ -40,6 +40,7 @@ public class PageTabs extends FragmentPagerAdapter {
         }
     }
 
+
     @Override
     public CharSequence getPageTitle(int position) {
         return this.mTabTitles[position];

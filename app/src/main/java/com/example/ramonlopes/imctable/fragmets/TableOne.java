@@ -1,5 +1,6 @@
 package com.example.ramonlopes.imctable.fragmets;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,70 +24,73 @@ import es.dmoral.toasty.Toasty;
  */
 
 public class TableOne extends Fragment implements View.OnClickListener {
-    public EditText campPeso;
-    public EditText campAltura;
-    public Button btn, btnLimp;
+    public Button btn, btnlimpar;
+    private EditText edtPeso, edtAltura, edtidade;
+    private static final int TIME_OUT = 3000;
+    private static final int MSG_DISMISS_DIALOG = 0;
+    private AlertDialog mAlertDialog;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View mView = inflater.inflate(R.layout.layout_fragment_b, container, false);
 
-        View iView = inflater.inflate(R.layout.layout_fragment_a, container, false);
 
-        btn = (Button) iView.findViewById(R.id.butCalc);
-        btnLimp = (Button) iView.findViewById(R.id.btnLimp);
-        campPeso = (EditText) iView.findViewById(R.id.edtText);
-        campAltura = (EditText) iView.findViewById(R.id.edtAlt);
+        btn = (Button) mView.findViewById(R.id.submit);
+        btnlimpar = (Button) mView.findViewById(R.id.btnclear);
+        edtAltura = (EditText) mView.findViewById(R.id.edt1);
+        edtidade = (EditText) mView.findViewById(R.id.editIdade);
+        edtPeso = (EditText) mView.findViewById(R.id.edt2);
 
-        btnLimp.setOnClickListener(this);
-        btn.setOnClickListener(this);
-
-        return iView;
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.butCalc:
-                if (campAltura.getText().toString().length() == 0) {
+        btnlimpar.setOnClickListener(this);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (edtAltura.getText().toString().length() == 0) {
                     Toasty.custom(getContext(), "Preencha o campo Altura !",
-                            R.drawable.alert, ContextCompat
-                                    .getColor(getContext(),
-                                            android.R.color.white), ContextCompat
-                                    .getColor(getContext(),
-                                            R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
-                    campAltura.requestFocus();
-                } else if (campPeso.getText().toString().length() == 0) {
+                            R.drawable.alert, ContextCompat.getColor(getContext(),
+                                    R.color.White), ContextCompat.getColor(getContext(),
+                                    R.color.colorPrimary),
+                            Toast.LENGTH_LONG, true, true).show();
+                    edtAltura.requestFocus();
+                } else if (edtPeso.getText().toString().length() == 0) {
                     Toasty.custom(getContext(), "Preencha o campo Peso !",
                             R.drawable.alert, ContextCompat
                                     .getColor(getContext(), R.color.White), ContextCompat
                                     .getColor(getContext(), R.color.colorPrimary),
                             Toast.LENGTH_LONG, true, true).show();
-                    campPeso.requestFocus();
+                    edtPeso.requestFocus();
+                } else if (edtidade.getText().toString().length() == 0) {
+                    Toasty.custom(getContext(), "Preencha o campo Idade !",
+                            R.drawable.alert, ContextCompat
+                                    .getColor(getContext(), R.color.White),
+                            ContextCompat.getColor(getContext(), R.color.colorPrimary),
+                            Toast.LENGTH_LONG, true, true).show();
+                    //edtidade.setError("Campo Peso em branco !");
+                    //btn.setEnabled(false);
+                    edtidade.requestFocus();
                 } else {
                     calcChild();
                 }
-
-                break;
-            case R.id.btnLimp:
-                campAltura.getText().clear();
-                campPeso.getText().clear();
-                break;
-            default:
-                break;
-
-        }
-
+            }
+        });
+        return mView;
     }
 
+    @Override
+    public void onClick(View v) {
+        edtAltura.getText().clear();
+        edtPeso.getText().clear();
+        edtidade.getText().clear();
+    }
 
     public void calcChild() {
 
         Double resultadoImc;
         float altura, peso;
 
-        altura = Float.parseFloat(campAltura.getText().toString());
-        peso = Float.parseFloat(campPeso.getText().toString());
+        altura = Float.parseFloat(edtAltura.getText().toString());
+        peso = Float.parseFloat(edtPeso.getText().toString());
 
         resultadoImc = peso / Math.pow(altura, 2);
         final String resultIMC = String.format("%.2f", resultadoImc);

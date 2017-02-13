@@ -10,12 +10,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/my_tooblar"
         android:padding="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/butCalc"
@@ -44,36 +43,32 @@
         <EditText
             android:id="@+id/edtText"
             style="@style/EditTextStyle"
-            android:layout_width="175dp"
+            android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="58dp"
-            android:hint="Peso (Kg)"
+            android:hint="@string/peso_kg"
             android:inputType="numberDecimal"
             android:maxLength="3"
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:layout_below="@+id/edtAlt"
             android:layout_alignLeft="@+id/txtcabecalho"
-            android:layout_alignStart="@+id/txtcabecalho"
-            android:layout_alignRight="@+id/txtcabecalho"
-            android:layout_alignEnd="@+id/txtcabecalho" />
+            android:layout_alignStart="@+id/txtcabecalho" />
 
         <EditText
             android:id="@+id/edtAlt"
             style="@style/EditTextStyle"
-            android:layout_width="175dp"
+            android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="45dp"
-            android:hint="Altura (M²)"
+            android:hint="@string/altura_m"
             android:inputType="numberDecimal"
             android:maxLength="4"
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:layout_below="@+id/txtcabecalho"
             android:layout_alignLeft="@+id/edtText"
-            android:layout_alignStart="@+id/edtText"
-            android:layout_alignRight="@+id/txtcabecalho"
-            android:layout_alignEnd="@+id/txtcabecalho" />
+            android:layout_alignStart="@+id/edtText" />
 
         <TextView
             android:id="@+id/txtcabecalho"

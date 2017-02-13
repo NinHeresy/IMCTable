@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TableLayout;
 
 import com.example.ramonlopes.imctable.adapter.PageTabs;
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     public ViewPager mViewPage;
     public TabLayout mTabLayout;
     public Toolbar mToobar;
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
         mViewPage = (ViewPager) findViewById(R.id.view_page);
 
 
-
         mViewPage.setAdapter(new PageTabs(getSupportFragmentManager(), getResources().getStringArray(R.array.title_tabs)));
-        mTabLayout.setTabTextColors(ContextCompat.getColorStateList(this,R.color.tab_colors));
+        mTabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_colors));
         mTabLayout.setupWithViewPager(mViewPage);
 
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -57,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.to_tutorial) {
-            return true;
-        }
-        if (id == R.id.old_man) {
             return true;
         }
         return super.onOptionsItemSelected(item);
