@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     android:weightSum="1"
-    tools:context="com.example.ramonlopes.imctable.ActivitysobreIMC"
-    android:orientation="horizontal">
+    tools:context="com.example.ramonlopes.imctable.ActivitysobreIMC">
+
     <include
         android:id="@+id/my_tooblar"
         layout="@layout/toolbar_my" />
+
     <WebView
-        android:layout_below="@+id/my_tooblar"
         android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_tooblar" />
 
 </RelativeLayout>

@@ -28,19 +28,19 @@ public class ActivitysobreIMC extends AppCompatActivity {
 
         //colcoando o button back em Write
         final Drawable upArrow = ContextCompat
-                .getDrawable(this,R.drawable.back);
+                .getDrawable(this, R.drawable.back);
         upArrow.setColorFilter(ContextCompat
-                .getColor(this,R.color.White), PorterDuff.Mode.SRC_ATOP);
+                .getColor(this, R.color.White), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar()
                 .setHomeAsUpIndicator(upArrow);
 
-        webView = (WebView)findViewById(R.id.webview);
+        webView = (WebView) findViewById(R.id.webview);
 
         String texto = "<html><body>"
                 + "<p align=\"justify\">"
                 + getString(R.string.copy)
                 + "</p> "
                 + "</body></html>";
-        webView.loadData(texto,"text/html;charset=UTF-8",null);
+        webView.loadData(texto, "text/html;charset=UTF-8", null);
     }
 }

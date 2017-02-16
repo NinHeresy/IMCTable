@@ -19,7 +19,7 @@ public class TableThree extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        mView = inflater.inflate(R.layout.layout_fragment_c, container,false);
+        mView = inflater.inflate(R.layout.layout_fragment_oldman, container,false);
 
 
 

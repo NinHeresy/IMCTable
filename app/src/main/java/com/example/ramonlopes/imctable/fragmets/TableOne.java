@@ -1,6 +1,5 @@
 package com.example.ramonlopes.imctable.fragmets;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.ramonlopes.imctable.R;
+import com.tapadoo.alerter.Alerter;
 
 import es.dmoral.toasty.Toasty;
 
@@ -25,15 +27,15 @@ import es.dmoral.toasty.Toasty;
 
 public class TableOne extends Fragment implements View.OnClickListener {
     public Button btn, btnlimpar;
+    public RadioButton radiomen, radiowom;
+    public RadioGroup buttonSelect;
+    public int checkGroup;
     private EditText edtPeso, edtAltura, edtidade;
-    private static final int TIME_OUT = 3000;
-    private static final int MSG_DISMISS_DIALOG = 0;
-    private AlertDialog mAlertDialog;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View mView = inflater.inflate(R.layout.layout_fragment_b, container, false);
+        View mView = inflater.inflate(R.layout.layout_fragment_child, container, false);
 
 
         btn = (Button) mView.findViewById(R.id.submit);
@@ -41,34 +43,46 @@ public class TableOne extends Fragment implements View.OnClickListener {
         edtAltura = (EditText) mView.findViewById(R.id.edt1);
         edtidade = (EditText) mView.findViewById(R.id.editIdade);
         edtPeso = (EditText) mView.findViewById(R.id.edt2);
+        radiomen = (RadioButton) mView.findViewById(R.id.radioMen);
+        radiowom = (RadioButton) mView.findViewById(R.id.radiowoman);
+        buttonSelect = (RadioGroup) mView.findViewById(R.id.radioGroup);
+
 
         btnlimpar.setOnClickListener(this);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkGroup = buttonSelect.getCheckedRadioButtonId();
+
                 if (edtAltura.getText().toString().length() == 0) {
-                    Toasty.custom(getContext(), "Preencha o campo Altura !",
-                            R.drawable.alert, ContextCompat.getColor(getContext(),
-                                    R.color.White), ContextCompat.getColor(getContext(),
-                                    R.color.colorPrimary),
-                            Toast.LENGTH_LONG, true, true).show();
+                    Alerter.create(getActivity())
+                            .setTitle("Campo altura não informado !!")
+                            .setText("Informe o valor no campo Altura.")
+                            .setDuration(3000)
+                            .setBackgroundColor(R.color.colorAccent)
+                            .setIcon(R.drawable.alert)
+                            .show();
                     edtAltura.requestFocus();
                 } else if (edtPeso.getText().toString().length() == 0) {
-                    Toasty.custom(getContext(), "Preencha o campo Peso !",
-                            R.drawable.alert, ContextCompat
-                                    .getColor(getContext(), R.color.White), ContextCompat
-                                    .getColor(getContext(), R.color.colorPrimary),
-                            Toast.LENGTH_LONG, true, true).show();
+                    Alerter.create(getActivity())
+                            .setTitle("Campo Peso não informado !!")
+                            .setText("Informe o valor no campo Peso.")
+                            .setDuration(3000)
+                            .setBackgroundColor(R.color.colorAccent)
+                            .setIcon(R.drawable.alert)
+                            .show();
                     edtPeso.requestFocus();
                 } else if (edtidade.getText().toString().length() == 0) {
-                    Toasty.custom(getContext(), "Preencha o campo Idade !",
-                            R.drawable.alert, ContextCompat
-                                    .getColor(getContext(), R.color.White),
-                            ContextCompat.getColor(getContext(), R.color.colorPrimary),
-                            Toast.LENGTH_LONG, true, true).show();
+                    Alerter.create(getActivity())
+                            .setTitle("Campo Idade não informado !!")
+                            .setText("Informe o valor no campo Idade.")
+                            .setDuration(3000)
+                            .setBackgroundColor(R.color.colorAccent)
+                            .setIcon(R.drawable.alert)
+                            .show();
+                    edtidade.requestFocus();
                     //edtidade.setError("Campo Peso em branco !");
                     //btn.setEnabled(false);
-                    edtidade.requestFocus();
                 } else {
                     calcChild();
                 }
@@ -82,6 +96,7 @@ public class TableOne extends Fragment implements View.OnClickListener {
         edtAltura.getText().clear();
         edtPeso.getText().clear();
         edtidade.getText().clear();
+        //buttonSelect.clearCheck();
     }
 
     public void calcChild() {

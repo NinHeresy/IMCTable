@@ -7,17 +7,15 @@
     android:layout_height="wrap_content"
     tools:context="com.example.ramonlopes.imctable.MainActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <Button
-            android:id="@+id/butCalc"
+            android:id="@+id/btn"
             android:layout_width="155dp"
             android:layout_height="52dp"
             android:layout_alignParentBottom="true"
@@ -29,46 +27,46 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnLimp"
+            android:id="@+id/btnLimpar"
             android:layout_width="155dp"
             android:layout_height="52dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:elevation="0dp"
-            android:text="@string/name_button"
+            android:text="@string/limpar"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edtText"
+            android:id="@+id/edt2"
             style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
-            android:layout_marginTop="58dp"
+            android:layout_alignLeft="@+id/txtcabecalho"
+            android:layout_alignStart="@+id/txtcabecalho"
+            android:layout_below="@+id/edt1"
+            android:layout_marginTop="56dp"
             android:hint="@string/peso_kg"
             android:inputType="numberDecimal"
             android:maxLength="3"
             android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:layout_below="@+id/edtAlt"
-            android:layout_alignLeft="@+id/txtcabecalho"
-            android:layout_alignStart="@+id/txtcabecalho" />
+            android:textStyle="normal|bold" />
 
         <EditText
-            android:id="@+id/edtAlt"
+            android:id="@+id/edt1"
             style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
-            android:layout_marginTop="45dp"
+            android:layout_alignLeft="@+id/edt2"
+            android:layout_alignStart="@+id/edt2"
+            android:layout_below="@+id/txtcabecalho"
+            android:layout_marginTop="55dp"
             android:hint="@string/altura_m"
             android:inputType="numberDecimal"
             android:maxLength="4"
             android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:layout_below="@+id/txtcabecalho"
-            android:layout_alignLeft="@+id/edtText"
-            android:layout_alignStart="@+id/edtText" />
+            android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/txtcabecalho"
@@ -85,24 +83,25 @@
             android:id="@+id/imgAltura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/edtText"
+            android:layout_above="@+id/edt2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/edtAlt"
-            android:src="@drawable/couple_50pd" />
+            android:layout_alignTop="@+id/edt1"
+            android:src="@drawable/elderly_person" />
 
         <ImageView
             android:id="@+id/imgPeso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/edtText"
+            android:layout_alignBottom="@+id/edt2"
             android:layout_alignEnd="@+id/imgAltura"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/imgAltura"
-            android:layout_alignTop="@+id/edtText"
+            android:layout_alignTop="@+id/edt2"
             android:src="@drawable/peso_50pd" />
-    </RelativeLayout>
 
+    </RelativeLayout>
 </RelativeLayout>
+
 

@@ -40,23 +40,6 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edt1"
-            style="@style/EditTextStyle"
-            android:layout_width="172dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="42dp"
-            android:hint="@string/altura_m"
-            android:inputType="numberDecimal"
-            android:maxLength="4"
-            android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:layout_below="@+id/txtcabecalho"
-            android:layout_alignLeft="@+id/edt2"
-            android:layout_alignStart="@+id/edt2"
-            android:layout_alignRight="@+id/editIdade"
-            android:layout_alignEnd="@+id/editIdade" />
-
         <TextView
             android:id="@+id/txtcabecalho"
             android:layout_width="wrap_content"
@@ -124,8 +107,8 @@
             android:layout_below="@+id/edt2"
             android:layout_marginTop="33dp"
             android:orientation="vertical"
-            android:layout_alignRight="@+id/edt2"
-            android:layout_alignEnd="@+id/edt2">
+            android:layout_toLeftOf="@+id/btnclear"
+            android:layout_toStartOf="@+id/btnclear">
 
             <RadioButton
                 android:id="@+id/radioMen"
@@ -139,24 +122,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="11dp"
+                android:checked="true"
                 android:layout_marginRight="11dp"
                 android:text="@string/mulher" />
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/edt1"
+            style="@style/EditTextStyle"
+            android:layout_width="172dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/altura_m"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/txtcabecalho"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:id="@+id/edt2"
             style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="24dp"
             android:hint="@string/peso_kg"
             android:inputType="numberDecimal"
             android:maxLength="3"
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:layout_below="@+id/edt1"
-            android:layout_alignRight="@+id/editIdade"
-            android:layout_alignEnd="@+id/editIdade" />
+            android:layout_alignLeft="@+id/edt1"
+            android:layout_alignStart="@+id/edt1" />
 
         <EditText
             android:id="@+id/editIdade"
@@ -170,8 +168,8 @@
             android:textStyle="normal|bold"
             android:layout_alignBaseline="@+id/texidade"
             android:layout_alignBottom="@+id/texidade"
-            android:layout_toRightOf="@+id/texidade"
-            android:layout_toEndOf="@+id/texidade" />
+            android:layout_alignLeft="@+id/radioGroup"
+            android:layout_alignStart="@+id/radioGroup" />
     </RelativeLayout>
 </RelativeLayout>
 

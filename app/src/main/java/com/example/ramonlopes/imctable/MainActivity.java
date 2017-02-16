@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.duvidas) {
-            Intent intent = new Intent(this,ActivitysobreIMC.class);
+            Intent intent = new Intent(this, ActivitysobreIMC.class);
             startActivity(intent);
 
             return true;

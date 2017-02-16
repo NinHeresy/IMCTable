@@ -1,6 +1,5 @@
 package com.example.ramonlopes.imctable.fragmets;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.ramonlopes.imctable.R;
+import com.tapadoo.alerter.Alerter;
 
 import es.dmoral.toasty.Toasty;
 
@@ -33,7 +32,7 @@ public class TableTwo extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View iView = inflater.inflate(R.layout.layout_fragment_a, container, false);
+        View iView = inflater.inflate(R.layout.layout_fragment_adulto, container, false);
 
 
         btn = (Button) iView.findViewById(R.id.butCalc);
@@ -52,19 +51,22 @@ public class TableTwo extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.butCalc:
                 if (campAltura.getText().toString().length() == 0) {
-                    Toasty.custom(getContext(), "Preencha o campo Altura !",
-                            R.drawable.alert, ContextCompat
-                                    .getColor(getContext(),
-                                            android.R.color.white), ContextCompat
-                                    .getColor(getContext(),
-                                            R.color.colorPrimary), Toast.LENGTH_LONG, true, true).show();
+                    Alerter.create(getActivity())
+                            .setTitle("Campo altura não informado !!")
+                            .setText("Informe o valor no campo Altura.")
+                            .setDuration(3000)
+                            .setBackgroundColor(R.color.colorAccent)
+                            .setIcon(R.drawable.alert)
+                            .show();
                     campAltura.requestFocus();
                 } else if (campPeso.getText().toString().length() == 0) {
-                    Toasty.custom(getContext(), "Preencha o campo Peso !",
-                            R.drawable.alert, ContextCompat
-                                    .getColor(getContext(), R.color.White), ContextCompat
-                                    .getColor(getContext(), R.color.colorPrimary),
-                            Toast.LENGTH_LONG, true, true).show();
+                    Alerter.create(getActivity())
+                            .setTitle("Campo Peso não informado !!")
+                            .setText("Informe o valor no campo Peso.")
+                            .setDuration(3000)
+                            .setBackgroundColor(R.color.colorAccent)
+                            .setIcon(R.drawable.alert)
+                            .show();
                     campPeso.requestFocus();
                 } else {
                     calcChild();
