@@ -39,7 +39,6 @@
 
         <EditText
             android:id="@+id/edtText"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="58dp"
@@ -54,7 +53,6 @@
 
         <EditText
             android:id="@+id/edtAlt"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="45dp"
@@ -65,7 +63,9 @@
             android:textStyle="normal|bold"
             android:layout_below="@+id/txtcabecalho"
             android:layout_alignLeft="@+id/edtText"
-            android:layout_alignStart="@+id/edtText" />
+            android:layout_alignStart="@+id/edtText" >
+            <requestFocus/>
+        </EditText>
 
         <TextView
             android:id="@+id/txtcabecalho"
@@ -75,7 +75,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/str_top"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/Black"
             android:textSize="17sp" />
 
         <ImageView

@@ -40,7 +40,6 @@
 
         <EditText
             android:id="@+id/edt2"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_alignLeft="@+id/txtcabecalho"
@@ -55,7 +54,6 @@
 
         <EditText
             android:id="@+id/edt1"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_alignLeft="@+id/edt2"
@@ -76,7 +74,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/str_top"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/Black"
             android:textSize="17sp" />
 
         <ImageView

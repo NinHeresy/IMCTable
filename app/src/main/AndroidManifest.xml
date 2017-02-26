@@ -3,6 +3,7 @@
     package="com.example.ramonlopes.imctable">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoactionBar">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +22,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:parentActivityName=".MainActivity"
-            android:name=".ActivitysobreIMC">
+            android:name=".ActivitysobreIMC"
+            android:parentActivityName=".MainActivity">
 
         </activity>
+
     </application>
 
 </manifest>

@@ -30,6 +30,7 @@ public class TableOne extends Fragment implements View.OnClickListener {
     public RadioButton radiomen, radiowom;
     public RadioGroup buttonSelect;
     public int checkGroup;
+    public int ageChild;
     private EditText edtPeso, edtAltura, edtidade;
 
     @Nullable
@@ -47,12 +48,17 @@ public class TableOne extends Fragment implements View.OnClickListener {
         radiowom = (RadioButton) mView.findViewById(R.id.radiowoman);
         buttonSelect = (RadioGroup) mView.findViewById(R.id.radioGroup);
 
+        if ("".equals(edtidade)) {
+            ageChild = Integer.parseInt(edtidade.getText().toString());
+
+        }
+
 
         btnlimpar.setOnClickListener(this);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkGroup = buttonSelect.getCheckedRadioButtonId();
+
 
                 if (edtAltura.getText().toString().length() == 0) {
                     Alerter.create(getActivity())
@@ -110,7 +116,6 @@ public class TableOne extends Fragment implements View.OnClickListener {
         resultadoImc = peso / Math.pow(altura, 2);
         final String resultIMC = String.format("%.2f", resultadoImc);
 
-
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
         if (resultadoImc < 17) {
             alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
@@ -145,6 +150,7 @@ public class TableOne extends Fragment implements View.OnClickListener {
         } else if ((resultadoImc >= 35) || (resultadoImc <= 39.99)) {
             alertDialogBuilder.setTitle("RESULTADO DO CALCULO:");
             alertDialogBuilder.setMessage("OBESIDADE II (SEVERA)!" +
+
                     "\nPara sua altura, o peso ideal está entre: 60kg e 81kg\n" +
                     "Resultado: " + resultIMC);
 
@@ -173,7 +179,5 @@ public class TableOne extends Fragment implements View.OnClickListener {
         });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-
     }
-
 }

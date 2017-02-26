@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/str_top"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/Black"
             android:textSize="17sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -83,7 +83,7 @@
             android:layout_marginTop="49dp"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/sexo"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/Black"
             android:textSize="22sp" />
 
         <TextView
@@ -95,7 +95,7 @@
             android:layout_below="@+id/radioGroup"
             android:layout_marginTop="49dp"
             android:text="@string/idade"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/Black"
             android:textSize="22sp" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -129,7 +129,6 @@
 
         <EditText
             android:id="@+id/edt1"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="40dp"
@@ -143,7 +142,6 @@
 
         <EditText
             android:id="@+id/edt2"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:layout_marginTop="24dp"
@@ -158,7 +156,6 @@
 
         <EditText
             android:id="@+id/editIdade"
-            style="@style/EditTextStyle"
             android:layout_width="172dp"
             android:layout_height="49dp"
             android:hint="@string/digite_sua_idade"
