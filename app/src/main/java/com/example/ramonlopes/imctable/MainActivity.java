@@ -12,6 +12,8 @@ import android.view.MenuItem;
 
 import com.example.ramonlopes.imctable.adapter.PageTabs;
 
+import butterknife.BindView;
+
 public class MainActivity extends AppCompatActivity {
 
     public ViewPager mViewPage;

@@ -16,9 +16,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.avast.android.butterknifezelezny.butterknife.ButterKnife6;
+import com.avast.android.butterknifezelezny.butterknife.ButterKnife8;
 import com.example.ramonlopes.imctable.R;
 import com.tapadoo.alerter.Alerter;
 
+import butterknife.BindView;
 import es.dmoral.toasty.Toasty;
 
 /**
@@ -33,7 +36,7 @@ public class TableOne extends Fragment implements View.OnClickListener {
     public int ageChild;
     private EditText edtPeso, edtAltura, edtidade;
 
-    @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.layout_fragment_child, container, false);
@@ -47,6 +50,7 @@ public class TableOne extends Fragment implements View.OnClickListener {
         radiomen = (RadioButton) mView.findViewById(R.id.radioMen);
         radiowom = (RadioButton) mView.findViewById(R.id.radiowoman);
         buttonSelect = (RadioGroup) mView.findViewById(R.id.radioGroup);
+
 
         if ("".equals(edtidade)) {
             ageChild = Integer.parseInt(edtidade.getText().toString());
