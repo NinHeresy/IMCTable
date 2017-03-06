@@ -8,4 +8,7 @@
         android:id="@+id/licenca"
         android:title="@string/menu_copyright"
         />
+    <item
+        android:id="@+id/calendar"
+        android:title="Calendario"/>
 </menu>

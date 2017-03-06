@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.licenca) {
             return true;
         }
+        if (id == R.id.calendar) {
+            Intent newCalendar = new Intent(this, CalendarActivity.class);
+            startActivity(newCalendar);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
